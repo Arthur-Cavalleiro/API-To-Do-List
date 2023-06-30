@@ -42,6 +42,25 @@ export const getAllTasks = async (req: express.Request, res: express.Response) =
   }
 }
 
+export const getOneTask = async (req:express.Request, res: express.Response) => {
+  try{
+
+    const {id} = req.params;
+    
+    if(!getTaskById(id)){
+      return res.sendStatus(400);
+    }
+    
+    const task = await getTaskById(id);
+
+    return res.sendStatus(200).json(task);
+
+  } catch (error) {
+    console.log(error);
+    return res.sendStatus(400);
+  }
+}
+
 export const deleteTask = async (req: express.Request, res: express.Response) => {
   try{
     const { id } = req.params;
