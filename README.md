@@ -40,6 +40,9 @@ A API oferece os seguintes endpoints para manipulação de tarefas:
 - **GET**: `/list`
   - Retorna todas as tarefas cadastradas.
 
+- **GET**(id): `/listOne/:id`
+   - Retorna a somente tarefa do id enviado.
+
 - **POST**: `/newTask`
   - Cria uma nova tarefa. Envie os dados da tarefa no corpo da requisição.
 
